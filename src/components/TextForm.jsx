@@ -10,11 +10,13 @@ export default function TextForm(props) {
   const handUpchange = () => {
     let newText = text.toUpperCase();
     setText(newText);
+    props.showAlert("Coverted to LowerCase", "success")
   }
 
   const handUpchangee = () => {
     let newText = text.toLowerCase();
     setText(newText);
+    props.showAlert("Coverted to LowerCase", "success")
   }
 
 
@@ -28,18 +30,21 @@ export default function TextForm(props) {
   const handleclear = () => {
     let newText = "";
     setText(newText);
+    props.showAlert("Coverted to Clear", "success")
 
   }
 
   const handlecopy = () => {
-    var newText = document.getElementById('exampleFormControlTextarea1');
-    newText.select();
-    navigator.clipboard.writeText(newText.value);
+    // var newText = document.getElementById('exampleFormControlTextarea1');
+    // newText.select();
+    navigator.clipboard.writeText(text);
+    props.showAlert("Coverted to Copy", "success")
   }
 
   const handleRemoveSpace = () => {
     let newText = text.split(/[ ] + /);
     setText(newText.join(" "));
+    props.showAlert("Coverted to Remove Space", "success")
   }
 
   return (
@@ -62,7 +67,7 @@ export default function TextForm(props) {
         <p>{text.length}Characters</p>
         <p>{0.008 * text.split(" ").length}reading time</p>
         <h3>preview</h3>
-        <p>{text}</p>
+        <p>{text.length>0 ? text : "Nothing to Preview !"}</p>
       </div>
     </div>
 
