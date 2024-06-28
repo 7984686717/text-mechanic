@@ -46,7 +46,7 @@ export default function TextForm(props) {
     <div>
       <div className="mb-3 mx-5 my-5">
         <h1>{props.heading}</h1>
-        <textarea className={`form-control bg-${props.mode === 'light' ? 'light' : 'dark'} text-${props.mode === 'light' ? 'dark' : 'light'}`} id="exampleFormControlTextarea1" rows="3" value={text} onChange={handleonchange}></textarea>
+        <textarea className={`form-control bg-${props.mode === 'light' ? 'light' : 'dark'} text-${props.mode === 'light' ? 'dark' : 'light'}`} id="exampleFormControlTextarea1" rows="10" value={text} onChange={handleonchange}></textarea>
         <button className='btn btn-outline-success my-3 mx-2' disabled={text.length === 0} onClick={handUpchange}>Convert to upper btn</button>
         <button className='btn btn-outline-success my-3 mx-2' disabled={text.length === 0} onClick={handUpchangee}>Convert to lower btn</button>
         <button className='btn btn-outline-success my-3 mx-2' disabled={text.length === 0} onClick={handlespeak}>speak</button>
